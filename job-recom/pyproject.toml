@@ -1,0 +1,25 @@
+[project]
+name="sei"
+authors = [
+  {name = "Amirthanathan R" , email="amirth300324@gmail.com"}
+] 
+version="0.1"
+description="A Recommendation System demo for Job Posting."
+readme="README.md"
+keywords=["job", "recommendation", "dash", "recommendor system" ]
+dynamic=["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies= {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where=["."]
+include=[
+  "sei"
+]
+exclude=[
+  "dataset"
+]
+
+[project.scripts]
+sei = "sei:run_server"
